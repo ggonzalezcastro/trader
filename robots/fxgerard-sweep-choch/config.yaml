@@ -1,0 +1,12 @@
+atr_period: 14
+atr_mult_dist: 1.5
+rr: 2.0
+risk_pct: 0.5
+swing_period: 20
+killzones:
+  london: ["08:00", "11:00"]
+  ny: ["13:00", "16:00"]
+min_atr_pips: 10
+max_spread_multiplier: 1.5
+session_filter: true
+news_filter: true

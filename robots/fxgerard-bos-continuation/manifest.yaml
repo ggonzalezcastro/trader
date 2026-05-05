@@ -1,0 +1,17 @@
+name: fxgerard-bos-continuation
+version: 0.1.0
+magic: 50003
+entry_class: FxGerardBOSContinuation
+symbols: ["EURUSD", "GBPUSD", "AUDUSD"]
+timeframes: ["M15", "H1"]
+broker_compat: ["FTMO", "FundedNext", "Generic"]
+params:
+  atr_period: 14
+  atr_mult_dist: 1.5
+  rr: 2.0
+  risk_pct: 0.5
+  ema_period: 50
+  bos_period: 20
+  killzones:
+    - ["08:00", "11:00"]
+    - ["13:00", "16:00"]

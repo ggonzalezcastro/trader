@@ -1,0 +1,13 @@
+MetaTrader5
+aiomql==4.1.2
+pydantic>=2.7
+smartmoneyconcepts>=1.0.0
+optuna>=4.0
+vectorbt
+backtesting
+nats-py
+redis
+loguru
+pyyaml
+pytest
+pytest-asyncio

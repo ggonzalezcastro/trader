@@ -1,0 +1,27 @@
+[project]
+name = "trading-framework"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "MetaTrader5==5.0.5735",
+    "aiomql==4.1.2",
+    "pydantic>=2.7",
+    "smartmoneyconcepts>=1.0.0",
+    "optuna>=4.0",
+    "vectorbt",
+    "backtesting",
+    "nats-py",
+    "redis",
+    "loguru",
+    "pyyaml",
+    "pytest",
+    "pytest-asyncio",
+]
+
+[project.scripts]
+start-paper = "python -m core.host"
+start-live = "python -m core.host --live"
+
+[build-system]
+requires = "setuptools>=61.0"
+build-backend = "setuptools.build_meta"
