@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+"""Create a sample HTML report for testing the analyzer."""
+
+from pathlib import Path
+from datetime import datetime, timedelta
+
+SAMPLE_HTML = """<!DOCTYPE html>
+<html>
+<head><title>MT5 Strategy Tester Report</title></head>
+<body>
+<h1>Strategy Tester Report</h1>
+<table border="1">
+<tr><th>Ticket</th><th>Symbol</th><th>Type</th><th>Open Price</th><th>Close Price</th><th>Profit</th><th>Volume</th><th>Time</th></tr>
+<tr><td>#50001001</td><td>EURUSD</td><td>buy</td><td>1.08500</td><td>1.08650</td><td>15.00</td><td>0.10</td><td>2024-01-15 09:30</td></tr>
+<tr><td>#50001002</td><td>EURUSD</td><td>sell</td><td>1.08600</td><td>1.08450</td><td>15.00</td><td>0.10</td><td>2024-01-15 10:15</td></tr>
+<tr><td>#50001003</td><td>EURUSD</td><td>buy</td><td>1.08550</td><td>1.08500</td><td>-5.00</td><td>0.10</td><td>2024-01-15 14:30</td></tr>
+<tr><td>#50001004</td><td>GBPUSD</td><td>buy</td><td>1.26500</td><td>1.26800</td><td>30.00</td><td>0.10</td><td>2024-01-16 08:00</td></tr>
+<tr><td>#50001005</td><td>EURUSD</td><td>sell</td><td>1.27000</td><td>1.27200</td><td>-20.00</td><td>0.10</td><td>2024-01-16 13:45</td></tr>
+</table>
+<h2>Summary</h2>
+<ul>
+<li>Initial Deposit: $10,000</li>
+<li>Final Balance: $10,035</li>
+<li>Total Trades: 5</li>
+<li>Winner: 3</li>
+<li>Loser: 2</li>
+<li>Win Rate: 60%</li>
+<li>Profit Factor: 1.5</li>
+<li>Max Drawdown: 2.5%</li>
+</ul>
+</body>
+</html>"""
+
+def main():
+    output = Path("tests/fixtures/sample_mt5_report.html")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(SAMPLE_HTML)
+    print(f"Created sample report: {output}")
+
+if __name__ == "__main__":
+    main()
